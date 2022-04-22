@@ -2,6 +2,7 @@ package com.hingorani.mypiranha;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MyPiranha extends ApplicationAdapter {
+	private Music music;
 	SpriteBatch batch;
 	Texture background;
 	Texture[] man;
@@ -49,6 +51,10 @@ public class MyPiranha extends ApplicationAdapter {
 
 	@Override
 	public void create () {
+		music=Gdx.audio.newMusic(Gdx.files.internal("bckmusic.mp3"));
+		music.setLooping(true);
+		music.setVolume(0.5f);
+		music.play();
 		batch = new SpriteBatch();
 		background = new Texture("bg.png");
 		man = new Texture[8];
@@ -230,6 +236,10 @@ public class MyPiranha extends ApplicationAdapter {
 				}
 			}
 			if(deadstate == 7){
+				music=Gdx.audio.newMusic(Gdx.files.internal("3.mp3"));
+				music.setLooping(true);
+				music.setVolume(0.5f);
+				music.play();
 				gameOver = true;
 			}
 
