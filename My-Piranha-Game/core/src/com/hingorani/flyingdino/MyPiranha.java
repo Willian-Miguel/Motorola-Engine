@@ -51,7 +51,7 @@ public class MyPiranha extends ApplicationAdapter {
 
 	@Override
 	public void create () {
-		music=Gdx.audio.newMusic(Gdx.files.internal("bckmusic.mp3"));
+		music=Gdx.audio.newMusic(Gdx.files.internal("2.mp3"));
 		music.setLooping(true);
 		music.setVolume(0.5f);
 		music.play();
@@ -150,7 +150,6 @@ public class MyPiranha extends ApplicationAdapter {
 				bombRectangles.add(new Rectangle(bombX.get(i), bombY.get(i), bomb.getWidth(), bomb.getHeight()));
 			}
 
-
 			if (coincount < 75) {
 				coincount++;
 			} else {
@@ -236,10 +235,6 @@ public class MyPiranha extends ApplicationAdapter {
 				}
 			}
 			if(deadstate == 7){
-				music=Gdx.audio.newMusic(Gdx.files.internal("3.mp3"));
-				music.setLooping(true);
-				music.setVolume(0.5f);
-				music.play();
 				gameOver = true;
 			}
 
